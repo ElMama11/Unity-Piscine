@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Finish_t
+  - Finish_c
+  - Finish_j
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - canJump
+  - Water
+  - UI
+  - ThomasChar
+  - JohnChar
+  - ClaireChar
+  - ThomasPlatforme
+  - JohnPlatform
+  - ClairePlatform
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
