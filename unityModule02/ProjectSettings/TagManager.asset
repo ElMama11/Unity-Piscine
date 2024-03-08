@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 1. Ground
+    uniqueID: 3060844541
+    locked: 0
+  - name: 2. Road&Village
+    uniqueID: 64790057
+    locked: 0
+  - name: 3. Water
+    uniqueID: 2715630783
+    locked: 0
+  - name: 4. BridgeForest
+    uniqueID: 3380780329
+    locked: 0
+  - name: 5. Forest1
+    uniqueID: 2564168169
+    locked: 0
+  - name: 6. Forest2
+    uniqueID: 2698239577
+    locked: 0
+  - name: 7. Mountain
+    uniqueID: 3482986939
+    locked: 0
+  - name: 8. Cloud
+    uniqueID: 930048497
+    locked: 0
