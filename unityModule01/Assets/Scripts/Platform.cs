@@ -17,5 +17,5 @@ public class MovingPlatform : MonoBehaviour
                     currentWaypointIndex = 0;
             }
         }
-    }
+    } 
 }

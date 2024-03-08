@@ -1,4 +1,7 @@
 using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
@@ -20,7 +23,51 @@ public class PlayerBehaviour : MonoBehaviour
 	public bool isThomasFinish;
 	public bool isJohnFinish;
 	public bool isClaireFinish;
+ private float updateCount = 0;
+    private float fixedUpdateCount = 0;
+    private float updateUpdateCountPerSecond;
+    private float updateFixedUpdateCountPerSecond;
 
+	public bool colidePositive = false;
+	public bool colideNegative = false;
+
+
+    // void Awake()
+    // {
+    //     // Uncommenting this will cause framerate to drop to 10 frames per second.
+    //     // This will mean that FixedUpdate is called more often than Update.
+    //     // Application.targetFrameRate = 1000;
+    //     StartCoroutine(Loop());
+    // }
+
+
+    // Increase the number of calls to FixedUpdate.
+    void FixedUpdate() {
+        fixedUpdateCount += 1;
+    }
+
+    // Show the number of calls to both messages.
+    void OnGUI() {
+        GUIStyle fontSize = new GUIStyle(GUI.skin.GetStyle("label"));
+        fontSize.fontSize = 24;
+        GUI.Label(new Rect(100, 100, 200, 50), "Update: " + updateUpdateCountPerSecond.ToString(), fontSize);
+        GUI.Label(new Rect(100, 150, 200, 50), "FixedUpdate: " + updateFixedUpdateCountPerSecond.ToString(), fontSize);
+        // GUI.Label(new Rect(100, 200, 2500, 500), "Detection mode: " + _activeRb.collisionDetectionMode.ToString(), fontSize);
+    }
+
+    // Update both CountsPerSecond values every second.
+    IEnumerator Loop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            updateUpdateCountPerSecond = updateCount;
+            updateFixedUpdateCountPerSecond = fixedUpdateCount;
+
+            updateCount = 0;
+            fixedUpdateCount = 0;
+        }
+    }
 	void Start() {
 		thomas = GameObject.Find("PlayerThomas");
 		john = GameObject.Find("PlayerJohn");
@@ -35,6 +82,7 @@ public class PlayerBehaviour : MonoBehaviour
 	}
 
 	void Update() {
+		updateCount += 1;
 		handlePlayerSwitch();
 		handlePlayerMovement();
 		endOfTheStage();
@@ -44,7 +92,14 @@ public class PlayerBehaviour : MonoBehaviour
 		if (_activeGameObj != null && gameObject.name ==_activeGameObj.name) {
 			float speed = (_activeRb == thomas.GetComponent<Rigidbody>()) ? _speedThomas : (_activeRb == john.GetComponent<Rigidbody>()) ? _speedJohn : _speedClaire;
 			float jumpSpeed = (_activeRb == thomas.GetComponent<Rigidbody>()) ? _jumpSpeedThomas : (_activeRb == john.GetComponent<Rigidbody>()) ? _jumpSpeedJohn : _jumpSpeedClaire;
-			_playerMovementInput = new Vector3(0, 0, Input.GetAxis("Horizontal"));
+			float oldPosZ = _activeGameObj.transform.position.z;
+			float input = Input.GetAxis("Horizontal");
+			// Debug.Log(string.Format("CP: {0}  CN: {1} INPUT: {2}", colidePositive, colideNegative, input));
+			if ((colidePositive && input > 0) || (colideNegative && input < 0)) {
+				handleCamera();
+				return ;
+			}
+			_playerMovementInput = new Vector3(0, 0, input);
 			Vector3 playerPosition =  _activeRb.transform.TransformDirection(_playerMovementInput) * speed;
 			_activeRb.velocity = new Vector3(playerPosition.x, _activeRb.velocity.y, playerPosition.z);
 			if (Input.GetButton("Jump") && isGrounded)
@@ -89,9 +144,18 @@ public class PlayerBehaviour : MonoBehaviour
 				Vector3 normal = contact.normal.normalized; // Get the normal vector of the collision contact point
 				if (normal == Vector3.up)
 					isGrounded = true;
+				if (normal == Vector3.back && !isGrounded)
+					colidePositive = true;
+				else
+					colidePositive = false;
+				if (normal == Vector3.forward && !isGrounded) 
+					colideNegative = true;
+				else
+					colideNegative = false;
+
 			}
 		}
-	}
+	} 
 
 	void OnCollisionExit() {
 		if (_activeGameObj != null && gameObject.name ==_activeGameObj.name) {
