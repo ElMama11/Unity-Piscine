@@ -7,14 +7,17 @@ TagManager:
   - Enemy
   - Base
   - Border
+  - TurretLow
+  - TurretMid
+  - TurretHigh
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
+  - Bullet
   - 
   - 
   - 
