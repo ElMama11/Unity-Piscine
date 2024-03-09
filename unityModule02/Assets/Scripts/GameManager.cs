@@ -20,13 +20,27 @@ public class GameManager : MonoBehaviour
 
 	private void Awake() {
 		_instance = this;
+		DontDestroyOnLoad(this.gameObject); // When a new scene is load, the object can't be destroyed
 	}
    
-	public void GameOver(bool flag) {
-		_isGameOver = flag;
+	public void GameOver() {
+		_isGameOver = true;
+		Debug.Log("Game Over");
+		var clones = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (var clone in clones)
+			Destroy(clone);
+		GameObject.Find("Spawner").GetComponent<EnemySpawner>().enabled = false;
 	}
 
 	public bool isGameOver() {
 		return _isGameOver;
 	}
+
+	public void DecreaseBaseHP(int hitPoints) {
+		_BaseHP -= (ushort)hitPoints;
+		Debug.Log("Base HP remaining : " + _BaseHP);
+		if(_BaseHP <= 0) {
+			GameOver();
+		}
+	} 
 }
