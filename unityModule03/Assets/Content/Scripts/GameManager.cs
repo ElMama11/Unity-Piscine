@@ -17,10 +17,15 @@ public class GameManager : MonoBehaviour
 
 	private bool	_isGameOver = false;
 	private UInt16	_BaseHP = 5;
+	public int currency;
 
 	private void Awake() {
 		_instance = this;
 		DontDestroyOnLoad(this.gameObject); // When a new scene is load, the object can't be destroyed
+	}
+
+	private void Start() {
+		currency = 100;
 	}
    
 	public void GameOver() {
@@ -42,5 +47,20 @@ public class GameManager : MonoBehaviour
 		if(_BaseHP <= 0) {
 			GameOver();
 		}
-	} 
+	}
+
+	public void increaseCurrency(int amount) {
+		currency += amount;
+	}
+
+	public bool spendCurrency(int amount) {
+		if (amount <= currency) {
+			currency -= amount;
+			return true;
+		}
+		else {
+			Debug.Log("Not enough energy to buy this");
+			return false;
+		}
+	}
 }

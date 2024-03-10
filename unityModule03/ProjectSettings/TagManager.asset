@@ -47,30 +47,39 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 1. Ground
+  - name: Ground
     uniqueID: 3060844541
     locked: 0
-  - name: 2. Water
+  - name: Water
     uniqueID: 2715630783
     locked: 0
-  - name: 3. Road&Village
+  - name: Road&Village
     uniqueID: 64790057
     locked: 0
-  - name: 4. BridgeForest
+  - name: ' BridgeForest'
     uniqueID: 3380780329
     locked: 0
-  - name: 5. Forest1
+  - name: Forest1
     uniqueID: 2564168169
     locked: 0
-  - name: 6. Forest2
+  - name: Forest2
     uniqueID: 2698239577
     locked: 0
-  - name: 7. Mountain
+  - name: ' Mountain'
     uniqueID: 3482986939
     locked: 0
-  - name: 8. Cloud
+  - name: Cloud
     uniqueID: 930048497
     locked: 0
-  - name: 9. Turrets
+  - name: Plots
+    uniqueID: 3410716823
+    locked: 0
+  - name: Bullets
+    uniqueID: 1650558111
+    locked: 0
+  - name: Turrets
     uniqueID: 1241826235
+    locked: 0
+  - name: UI
+    uniqueID: 1794952221
     locked: 0

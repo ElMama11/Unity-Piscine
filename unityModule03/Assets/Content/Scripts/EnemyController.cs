@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _speed;
 	private Rigidbody2D _rb;
 	[SerializeField] private float _health = 3f;
+	[SerializeField] private int currencyWorth = 50;
     void Start() {
         _rb = gameObject.GetComponent<Rigidbody2D>();
 		_speed = -0.5f;
@@ -20,6 +21,7 @@ public class EnemyController : MonoBehaviour
 		_health -= dmg;
 		Debug.Log("Mob HP: " + _health);
 		if (_health <= 0) {
+			GameManager.Instance.increaseCurrency(50);
 			Destroy(gameObject);
 		}
 	}
