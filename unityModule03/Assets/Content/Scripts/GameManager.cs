@@ -63,4 +63,8 @@ public class GameManager : MonoBehaviour
 			return false;
 		}
 	}
+
+	public UInt16 getBaseHP() {
+		return _BaseHP;
+	}
 }

@@ -19,7 +19,6 @@ public class EnemyController : MonoBehaviour
 
 	public void takeDamage(float dmg) {
 		_health -= dmg;
-		Debug.Log("Mob HP: " + _health);
 		if (_health <= 0) {
 			GameManager.Instance.increaseCurrency(50);
 			Destroy(gameObject);
