@@ -5731,7 +5731,8 @@ GameObject:
   - component: {fileID: 758725306}
   - component: {fileID: 758725305}
   - component: {fileID: 758725304}
-  m_Layer: 5
+  - component: {fileID: 758725307}
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5769,6 +5770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b09353b286b48fc88ff066dc65ca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 2018515573}
 --- !u!114 &758725305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5807,6 +5809,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758725302}
   m_CullTransparentMesh: 1
+--- !u!225 &758725307
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758725302}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &811020188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24676,7 +24690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -411.48, y: 115.48001}
+  m_AnchoredPosition: {x: -411.47998, y: 115.47998}
   m_SizeDelta: {x: 822.95, y: 230.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1359098341
@@ -25926,7 +25940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3595930782327744070, guid: 816ddc7950d854c459d3135d2578f690, type: 3}
-  interval: 100
+  interval: 1000
 --- !u!212 &1625728070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28770,6 +28784,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 693459769407758457, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144201722106916298, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1516782771543311290, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
