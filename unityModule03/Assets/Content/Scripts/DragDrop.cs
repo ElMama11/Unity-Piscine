@@ -7,6 +7,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
 	private CanvasGroup canvasGroup;
 	[SerializeField] private Canvas canvas;
+    Transform parentAfterDrag;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
@@ -16,7 +17,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
-        // Debug.Log("OnBeginDrag");
 		canvasGroup.alpha = 0.6f;
 		canvasGroup.blocksRaycasts = false;
     }

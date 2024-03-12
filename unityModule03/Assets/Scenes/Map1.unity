@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27730231}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,6 +851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -920,6 +924,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1742,6 +1750,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4297,6 +4309,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1144201722106916298, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1516782771543311290, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_SortingLayer
       value: 9
@@ -4308,6 +4324,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4378,6 +4398,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4484,7 +4508,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1359098340}
-  - {fileID: 758725303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4855,6 +4878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4924,6 +4951,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5733,7 +5764,7 @@ GameObject:
   - component: {fileID: 758725304}
   - component: {fileID: 758725307}
   m_Layer: 0
-  m_Name: Image
+  m_Name: TurretToDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5746,16 +5777,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758725302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 518551225}
+  m_Father: {fileID: 1359098340}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168.73, y: -118.89}
+  m_AnchoredPosition: {x: -359, y: 249}
   m_SizeDelta: {x: 63.37, y: 57.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758725304
@@ -5880,6 +5911,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6084,6 +6119,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24272,6 +24311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24686,6 +24729,7 @@ RectTransform:
   - {fileID: 2142174208}
   - {fileID: 1860355688}
   - {fileID: 1176941550}
+  - {fileID: 758725303}
   m_Father: {fileID: 518551225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -25043,6 +25087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25165,6 +25213,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25518,6 +25570,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25899,6 +25955,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26067,6 +26127,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26435,6 +26499,10 @@ PrefabInstance:
     - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
       propertyPath: m_Name
       value: Plot (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28802,6 +28870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot
       objectReference: {fileID: 0}
+    - target: {fileID: 5978054678772500472, guid: 36d91cf57b28d3d42b54fce7325e0d7e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28817,6 +28889,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1397441018}
+  - {fileID: 1287963780}
   - {fileID: 519420032}
   - {fileID: 1422562392}
   - {fileID: 1625728071}
@@ -28824,4 +28897,3 @@ SceneRoots:
   - {fileID: 2018515574}
   - {fileID: 27730231}
   - {fileID: 518551225}
-  - {fileID: 1287963780}

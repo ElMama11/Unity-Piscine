@@ -15,6 +15,7 @@ public class Plot : MonoBehaviour, IDropHandler
 	private void Start() {
 		_startColor = _sr.color;
 	}
+	
 	private void OnMouseEnter() {
 		_sr.color = _hoverColor;
 	}
@@ -23,21 +24,11 @@ public class Plot : MonoBehaviour, IDropHandler
 		_sr.color = _startColor;
 	}
 
-	// private void OnMouseDown() {
-	// 	if (_tower != null)
-	// 		return;
-	// 	Tower tmpTower = BuildManager.main.getSelectedTower();
-	// 	if (tmpTower.cost > GameManager.Instance.currency) {
-	// 		Debug.Log("You can't buy that");
-	// 		return;
-	// 	}
-	// 	GameManager.Instance.spendCurrency(tmpTower.cost);
-	// 	_tower = Instantiate(tmpTower.prefab, transform.position, Quaternion.identity);
-	// }
-
 	public void OnDrop(PointerEventData eventData) {
+		if (eventData.pointerDrag != null)
+        	Debug.Log("OnDrop called.");
 		Debug.Log("YEP");
-	if (_tower != null)
+		if (_tower != null)
 			return;
 		Tower tmpTower = BuildManager.main.getSelectedTower();
 		if (tmpTower.cost > GameManager.Instance.currency) {
