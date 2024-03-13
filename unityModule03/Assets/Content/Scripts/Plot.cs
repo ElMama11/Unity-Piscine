@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -25,14 +26,19 @@ public class Plot : MonoBehaviour, IDropHandler
 	}
 
 	public void OnDrop(PointerEventData eventData) {
-		if (eventData.pointerDrag != null)
-        	Debug.Log("OnDrop called.");
-		Debug.Log("YEP");
+		Tower tmpTower;
 		if (_tower != null)
 			return;
-		Tower tmpTower = BuildManager.main.getSelectedTower();
+		if (eventData.pointerDrag.name == "TurretLow")
+			BuildManager.main.SetSelectedTower(0);
+		else if (eventData.pointerDrag.name == "TurretMid")
+			BuildManager.main.SetSelectedTower(1);
+		else if (eventData.pointerDrag.name == "TurretHigh")
+			BuildManager.main.SetSelectedTower(2);
+		tmpTower = BuildManager.main.getSelectedTower();
 		if (tmpTower.cost > GameManager.Instance.currency) {
 			Debug.Log("You can't buy that");
+			// gameObject.GetComponent<Renderer>().material.color = new Color(0, 204, 102);
 			return;
 		}
 		GameManager.Instance.spendCurrency(tmpTower.cost);
