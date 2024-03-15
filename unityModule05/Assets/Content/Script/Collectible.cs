@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-
     void Start() {
-        
     }
 
     void Update() {
-        
+        if (GameManager.Instance.isDead == true) {
+			gameObject.SetActive(true);
+		}
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log(other.gameObject.tag + " : " + gameObject.name + " : " + Time.time);
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            //+1 leaf game mager
-            Destroy(gameObject);
+			gameObject.SetActive(false);
+            GameManager.Instance.increaseScore();
         }
     }
 }

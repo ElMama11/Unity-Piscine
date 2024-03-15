@@ -19,7 +19,7 @@ public class Liana : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other) {
 		animator.SetBool("IsAttacking", true);
 		if (other.gameObject.name == "Player") {
-			playerScript.TakeDamage(1);
+			GameManager.Instance.decreaseHP(1);
 			audioSource.Play();
 		}
 	}
