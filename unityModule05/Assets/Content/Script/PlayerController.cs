@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
 	public void HandleDeathAndHit() {
 		if (GameManager.Instance.hp <= 0) {
-					isAlive = false;
+			isAlive = false;
 			audioSource.PlayOneShot(deathSound);
 			animator.SetBool("IsDead", true);
 			StartCoroutine(fadeToBlack());

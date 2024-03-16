@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BtnMainMenu : MonoBehaviour {
     public void BtnMain() {
-        Debug.Log("ddddddddddddd");
+		UserProfile.Instance.SaveUserProfile();
         SceneManager.LoadScene(0);
     }
 }

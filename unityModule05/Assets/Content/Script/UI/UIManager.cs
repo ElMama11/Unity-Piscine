@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     }
 
     void Update() {
-        UInt16 hp = GameManager.Instance.hp;
+        int hp = GameManager.Instance.hp;
 		int score = GameManager.Instance.collectiblePoints;
 		TextHP.text = "HP : " + hp;
 		TextScore.text = "Score : " + score;

@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour
 	public GameObject playerObj;
 	private PlayerController _playerScript;
 	public TextMeshProUGUI textboxLeafSufficient;
-	public int collectiblePoints = 0;
+	public int collectiblePoints;
+	public int lastStageUnlock;
 	public bool isDead = false;
-	public UInt16 hp = 3;
+	public int hp;
 
 	private void Awake() {
 		_instance = this;
@@ -29,11 +30,15 @@ public class GameManager : MonoBehaviour
 	}
 
 	private void Start() {
-		 _playerScript = playerObj.GetComponent<PlayerController>();
+		_playerScript = playerObj.GetComponent<PlayerController>();
+		hp = PlayerPrefs.GetInt("PlayerHP", 3);
+		collectiblePoints = PlayerPrefs.GetInt("PlayerScore", 0);
 	}
 
 	public void increaseScore() {
 		collectiblePoints += 5;
+		int leafCount = PlayerPrefs.GetInt("DiaryLeaf");
+		PlayerPrefs.SetInt("DiaryLeaf", leafCount + 5);
 	}
 
 	public void resetScore() {
@@ -44,8 +49,19 @@ public class GameManager : MonoBehaviour
 		Debug.Log("The Stage is finished, congratulations !");
 		if (collectiblePoints >= 25) {
 			collectiblePoints = 0;
-			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings) {
+				if (SceneManager.GetActiveScene().buildIndex <= 3)
+					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+				else
+					SceneManager.LoadScene("MainMenu");
+				for (int i = 0; i < 7; i++) 
+					PlayerPrefs.SetInt("CollectibleKey_" + i, 1);
+				int lastStageUnlock = PlayerPrefs.GetInt("LastStageUnlockKey");
+				if (lastStageUnlock != 3) {
+					PlayerPrefs.SetInt("LastStageUnlockKey", lastStageUnlock + 1);
+					PlayerPrefs.Save();
+				}
+			}
 			else
 				SceneManager.LoadScene(0);
 		}
@@ -56,8 +72,11 @@ public class GameManager : MonoBehaviour
 	public void decreaseHP(UInt16 dmg) {
 		hp -= dmg;
 		_playerScript.HandleDeathAndHit();
-		if (hp <= 0)
+		if (hp <= 0) {
+			int deathCount = PlayerPrefs.GetInt("DeathKey");
+			PlayerPrefs.SetInt("DeathKey", deathCount + 1);
 			isDead = true;
+		}
 	}
 
 	public void resetHP() {
